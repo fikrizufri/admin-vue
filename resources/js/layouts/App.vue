@@ -10,7 +10,7 @@
 <script>
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import Sidebar from "../components/Content";
+import Content from "../components/Content";
 import Footer from "../components/Footer";
 export default {
     components: { Navbar, Footer, Sidebar, Content },
