@@ -1,30 +1,33 @@
 <template>
-    <div class="wrapper">
-        <Navbar />
-        <Sidebar />
+  <div class="wrapper">
+    <app-loading />
+    <app-header v-if="isAuth" />
+    <app-navbar v-if="isAuth" />
 
-        <div class="content-wrapper">
-            <router-view></router-view>
-        </div>
-
-        <Footer />
-
-        <FlashMessage :position="'right bottom'"></FlashMessage>
+    <div v-bind:class="{ 'content-wrapper': isAuth,'login-page': !isAuth }">
+      <router-view></router-view>
     </div>
+    <app-footer v-if="isAuth" />
+  </div>
 </template>
 <script>
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
+import { mapState, mapGetters } from "vuex";
+import Header from "../components/Sidebar.vue";
+import Navbar from "../components/Navbar.vue";
+import Footer from "../components/Footer.vue";
+
+import Loading from "../components/Loading.vue";
+
 export default {
-    components: { Navbar, Footer, Sidebar },
-    mounted() {
-        window.$("body").Layout();
-        window.$('[data-widget="pushmenu"]').PushMenu();
-        window.$('[data-widget="control-sidebar"]').ControlSidebar();
-        window.$('ul[data-widget="treeview"]').Treeview("init");
-        window.$(".dropdown").Dropdown();
-        window.$('ul[data-widget="treeview"]').overlayScrollbars();
-    }
+  computed: {
+    ...mapState(["token"]),
+    ...mapGetters(["isAuth"]),
+  },
+  components: {
+    "app-navbar": Navbar,
+    "app-header": Header,
+    "app-footer": Footer,
+    "app-loading": Loading,
+  },
 };
 </script>

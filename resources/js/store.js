@@ -16,6 +16,7 @@ const store = new Vuex.Store({
     state: {
         //VARIABLE TOKEN MENGAMBIL VALUE DARI LOCAL STORAGE token
         token: localStorage.getItem('token'),
+        loading: false,
         errors: []
     },
     getters: {
@@ -24,6 +25,9 @@ const store = new Vuex.Store({
         //STATE token.
         isAuth: state => {
             return state.token != "null" && state.token != null
+        },
+        getLoading: state => {
+            return state.loading;
         }
     },
     mutations: {
@@ -36,6 +40,9 @@ const store = new Vuex.Store({
         },
         CLEAR_ERRORS(state) {
             state.errors = []
+        },
+        SET_LOADING(state, bool) {
+            state.loading = bool;
         }
     }
 })

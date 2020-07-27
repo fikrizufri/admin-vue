@@ -1,3 +1,6 @@
+
+// AdminLTE
+@import "~admin-lte/dist/css/adminlte.css";
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
@@ -6,9 +9,6 @@
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
-
-// AdminLTE
-@import "~admin-lte/dist/css/adminlte.css";
 @import "~overlayscrollbars/css/OverlayScrollbars.css";
 
 // Font Awesome
@@ -21,3 +21,4 @@
 .invalid-feedback {
     display: inline-block !important;
 }
+
