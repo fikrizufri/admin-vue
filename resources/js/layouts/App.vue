@@ -2,18 +2,22 @@
     <div class="wrapper">
         <Navbar />
         <Sidebar />
-        <Content />
+
+        <div class="content-wrapper">
+            <router-view></router-view>
+        </div>
 
         <Footer />
+
+        <FlashMessage :position="'right bottom'"></FlashMessage>
     </div>
 </template>
 <script>
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import Content from "../components/Content";
 import Footer from "../components/Footer";
 export default {
-    components: { Navbar, Footer, Sidebar, Content },
+    components: { Navbar, Footer, Sidebar },
     mounted() {
         window.$("body").Layout();
         window.$('[data-widget="pushmenu"]').PushMenu();

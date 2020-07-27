@@ -48842,3 +48842,7 @@ readers do not read off random characters that represent icons */
   width: auto;
 }
 
+.invalid-feedback {
+  display: inline-block !important;
+}
+

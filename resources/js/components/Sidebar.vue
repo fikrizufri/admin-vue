@@ -19,51 +19,21 @@
                 >
                     <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                        <router-link to="/dashboard" class="nav-link">
+                        <router-link to="/" class="nav-link" exact>
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
                             </p>
                         </router-link>
                     </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-cogs"></i>
-                            <p>
-                                Management
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-circle nav-icon"></i>
-                                    <p>Active Page</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-circle nav-icon"></i>
-                                    <p>Inactive Page</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li class="nav-item">
-                        <router-link to="/profile" class="nav-link">
-                            <i class="nav-icon fas fa-user"></i>
+                        <router-link to="/category" class="nav-link" exact>
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-                                Profile
+                                Catergory
                             </p>
                         </router-link>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-power-off"></i>
-                            <p>
-                                Logout
-                            </p>
-                        </a>
                     </li>
                 </ul>
             </nav>
